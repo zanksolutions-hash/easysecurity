@@ -12,7 +12,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Manrope:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"EasySecurity","url":"https://easysecurity.zanksolutions.be/","telephone":"+32499469864","email":"info@zanksolutions.be","address":{"@type":"PostalAddress","streetAddress":"Chemin Lambiert","postalCode":"7120","addressLocality":"Estinnes","addressCountry":"BE"},"areaServed":["Estinnes","Binche","La Louvière","Mons","Thuin","Charleroi","Morlanwelz","Anderlues"],"description":"Installation d'alarmes et de caméras Ajax sans fil dans le Hainaut."}
 </script>
@@ -52,9 +52,8 @@ img{max-width:100%;display:block}
 /* Navigation */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
 header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.3rem Montserrat,sans-serif;color:var(--nuit)}
-.logo svg{width:34px;height:38px}
-.logo b{color:var(--vert);font-weight:800}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font:600 1.02rem Manrope,sans-serif;letter-spacing:.24em;color:var(--nuit);white-space:nowrap}
+.logo svg{width:36px;height:36px;flex:none}
 .menu{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:.95rem}
 .menu a{text-decoration:none;color:var(--texte)}
 .menu a:hover{color:var(--vert)}
@@ -235,8 +234,8 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
 <header class="nav">
   <div class="conteneur">
     <a class="logo" href="#" aria-label="EasySecurity, accueil">
-      <svg viewBox="0 0 34 38" aria-hidden="true"><path d="M17 1.5 3 7v10.5C3 26.6 9.2 33.6 17 36.5c7.8-2.9 14-9.9 14-19V7L17 1.5Z" fill="#0d1628"/><path d="m10.5 18.5 4.5 4.5 9-9.5" fill="none" stroke="#24c474" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Easy<b>Security</b></span>
+      <svg viewBox="0 0 74 74" aria-hidden="true"><circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="37" cy="37" r="17" fill="currentColor"/><circle cx="43" cy="31" r="5" fill="#e5402f"/></svg>
+      <span>EASY SECURITY</span>
     </a>
     <nav class="menu" id="menu">
       <a href="#fonctionnement">Comment ça marche</a>
@@ -536,10 +535,10 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
   <div class="conteneur">
     <div class="grille">
       <div>
-        <a class="logo" href="#">
-          <svg viewBox="0 0 34 38" aria-hidden="true"><path d="M17 1.5 3 7v10.5C3 26.6 9.2 33.6 17 36.5c7.8-2.9 14-9.9 14-19V7L17 1.5Z" fill="#0d1628"/><path d="m10.5 18.5 4.5 4.5 9-9.5" fill="none" stroke="#24c474" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Easy<b>Security</b></span>
-        </a>
+        <a class="logo" href="#" aria-label="EasySecurity, accueil">
+      <svg viewBox="0 0 74 74" aria-hidden="true"><circle cx="37" cy="37" r="33" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="37" cy="37" r="17" fill="currentColor"/><circle cx="43" cy="31" r="5" fill="#e5402f"/></svg>
+      <span>EASY SECURITY</span>
+    </a>
         <p style="margin-top:14px">Alarmes et caméras Ajax pour particuliers et professionnels, dans le Hainaut.</p>
       </div>
       <div><h4>Solutions</h4><ul><li><a href="#solutions">Maisons</a></li><li><a href="#solutions">Commerces</a></li><li><a href="#materiel">Matériel Ajax</a></li></ul></div>
