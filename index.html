@@ -19,7 +19,7 @@
 <style>
 :root{
   --nuit:#0d1628; --nuit-2:#16233d; --nuit-3:#22324f;
-  --vert:#1fae67; --vert-clair:#24c474; --vert-fond:#e8f7ef;
+  --accent:#d8342a; --accent-clair:#ff5a4a; --accent-fond:#fdecea; --ok:#24c474; --ok-fond:#e8f7ef;
   --rouge:#e5402f;
   --texte:#1b2333; --doux:#5b6475; --ligne:#e3e7ee; --fond:#f5f7fa; --blanc:#fff;
   --r:14px;
@@ -35,11 +35,11 @@ a{color:inherit}
 img{max-width:100%;display:block}
 .conteneur{width:min(1180px,100% - 32px);margin-inline:auto}
 .section{padding:88px 0}
-.surtitre{font:600 .8rem/1 Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--vert);margin-bottom:14px;display:block}
+.surtitre{font:600 .8rem/1 Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
 .intro{max-width:640px;color:var(--doux);font-size:1.08rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 1rem Montserrat,sans-serif;padding:15px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s}
-.btn-vert{background:var(--vert);color:#fff;box-shadow:0 8px 20px rgba(31,174,103,.28)}
-.btn-vert:hover{background:#18995a;transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(216,52,42,.28)}
+.btn-accent:hover{background:#b92a21;transform:translateY(-1px)}
 .btn-ligne{border:2px solid currentColor;padding:13px 24px;background:transparent}
 .btn svg{width:18px;height:18px}
 
@@ -47,7 +47,7 @@ img{max-width:100%;display:block}
 .bandeau{background:var(--nuit);color:#c9d2e3;font-size:.85rem}
 .bandeau .conteneur{display:flex;justify-content:space-between;gap:16px;padding:8px 0}
 .bandeau a{color:#fff;text-decoration:none;font-weight:600}
-.bandeau span.point{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--vert-clair);margin-right:8px}
+.bandeau span.point{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent-clair);margin-right:8px}
 
 /* Navigation */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
@@ -56,7 +56,7 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .logo svg{width:36px;height:36px;flex:none}
 .menu{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:.95rem}
 .menu a{text-decoration:none;color:var(--texte)}
-.menu a:hover{color:var(--vert)}
+.menu a:hover{color:var(--accent)}
 .nav .btn{padding:11px 20px;font-size:.92rem}
 .burger{display:none;margin-left:auto;background:none;border:0;padding:8px;cursor:pointer}
 .burger span{display:block;width:24px;height:2px;background:var(--nuit);margin:5px 0;border-radius:2px}
@@ -67,7 +67,7 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,22,40,.96) 0%,rgba(13,22,40,.8) 45%,rgba(13,22,40,.35) 100%)}
 .hero .conteneur{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:84px 0 96px}
 .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--vert-clair)}
+.hero h1 em{font-style:normal;color:var(--accent-clair)}
 .hero .chapo{font-size:1.15rem;color:#d5ddeb;max-width:560px;margin-bottom:28px}
 .coches{list-style:none;padding:0;margin:0 0 32px;display:grid;gap:12px}
 .coches li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
@@ -86,7 +86,7 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .champ{margin-bottom:12px}
 .champ label{display:block;font-size:.82rem;font-weight:600;margin-bottom:5px}
 .champ input,.champ select{width:100%;padding:13px 14px;border:1.5px solid var(--ligne);border-radius:10px;font:inherit;font-size:1rem;background:#fff;color:var(--texte)}
-.champ input:focus,.champ select:focus{outline:none;border-color:var(--vert)}
+.champ input:focus,.champ select:focus{outline:none;border-color:var(--accent)}
 .carte-devis .btn{width:100%;margin-top:6px}
 .mention{font-size:.78rem;color:var(--doux);margin:12px 0 0;text-align:center}
 .merci{display:none;text-align:center;padding:24px 0}
@@ -96,12 +96,12 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .confiance{border-bottom:1px solid var(--ligne)}
 .confiance .conteneur{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:30px 0}
 .confiance div{display:flex;gap:14px;align-items:center;font-weight:600;font-size:.95rem}
-.confiance svg{flex:none;width:40px;height:40px;padding:9px;border-radius:10px;background:var(--vert-fond);color:var(--vert)}
+.confiance svg{flex:none;width:40px;height:40px;padding:9px;border-radius:10px;background:var(--accent-fond);color:var(--accent)}
 
 /* Comment ça marche */
 .etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;counter-reset:e}
 .etape{position:relative;background:var(--fond);border-radius:var(--r);padding:30px 28px}
-.etape .num{font:800 .8rem Montserrat,sans-serif;color:var(--vert);letter-spacing:.1em}
+.etape .num{font:800 .8rem Montserrat,sans-serif;color:var(--accent);letter-spacing:.1em}
 .etape svg{width:46px;height:46px;color:var(--nuit);margin:14px 0 18px}
 .etape p{color:var(--doux);margin:0}
 .etape.alerte svg{color:var(--rouge)}
@@ -114,8 +114,8 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .solution .corps{padding:28px 30px 32px;display:flex;flex-direction:column;flex:1}
 .solution ul{padding:0;margin:0 0 24px;list-style:none;display:grid;gap:9px}
 .solution li{padding-left:28px;position:relative;color:var(--doux)}
-.solution li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--vert-fond) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%231fae67' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
-.solution .lien{margin-top:auto;font:700 .95rem Montserrat,sans-serif;color:var(--vert);text-decoration:none}
+.solution li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent-fond) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23d8342a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.solution .lien{margin-top:auto;font:700 .95rem Montserrat,sans-serif;color:var(--accent);text-decoration:none}
 
 /* Bloc photo détecteur */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -127,14 +127,14 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .visuel-det .notif small{color:var(--doux);font-size:.8rem}
 .puces{display:grid;gap:18px;margin:26px 0 30px}
 .puce{display:flex;gap:16px}
-.puce svg{flex:none;width:44px;height:44px;padding:10px;border-radius:12px;background:var(--vert-fond);color:var(--vert)}
+.puce svg{flex:none;width:44px;height:44px;padding:10px;border-radius:12px;background:var(--accent-fond);color:var(--accent)}
 .puce p{margin:0;color:var(--doux)}
 .puce h3{margin-bottom:2px;font-size:1.02rem}
 
 /* Matériel */
 .materiel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
 .produit{border:1px solid var(--ligne);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s}
-.produit:hover{border-color:var(--vert);transform:translateY(-3px)}
+.produit:hover{border-color:var(--accent);transform:translateY(-3px)}
 .produit svg{width:42px;height:42px;color:var(--nuit);margin-bottom:16px}
 .produit p{color:var(--doux);margin:0;font-size:.95rem}
 
@@ -146,14 +146,14 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .photos img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .photos figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(13,22,40,.82);backdrop-filter:blur(6px);border-radius:12px;padding:12px 14px;font-size:.88rem}
 .photos figcaption b{display:block;font-family:Montserrat,sans-serif}
-.photos .ok b{color:var(--vert-clair)}
+.photos .ok b{color:var(--ok)}
 .photos .ko b{color:#ff6b5c}
 
 /* Déroulé */
 .deroule{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}
 .deroule::before{content:"";position:absolute;top:23px;left:12%;right:12%;height:2px;background:var(--ligne)}
 .pas{text-align:center;padding:0 16px;position:relative}
-.pas .rond{width:48px;height:48px;border-radius:50%;background:var(--vert);color:#fff;display:grid;place-items:center;margin:0 auto 18px;font:800 1.1rem Montserrat,sans-serif;box-shadow:0 0 0 8px #fff}
+.pas .rond{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;margin:0 auto 18px;font:800 1.1rem Montserrat,sans-serif;box-shadow:0 0 0 8px #fff}
 .pas p{color:var(--doux);font-size:.95rem}
 
 /* Zone */
@@ -168,13 +168,13 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .faq details{border-bottom:1px solid var(--ligne);padding:4px 0}
 .faq summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;font:700 1.05rem Montserrat,sans-serif;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:10px;height:10px;border-right:2px solid var(--vert);border-bottom:2px solid var(--vert);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:10px;height:10px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
 .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
 .faq details p{color:var(--doux);padding-right:40px}
 
 /* Appel final */
 .final{background:var(--nuit);color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.final::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;border:50px solid rgba(36,196,116,.1)}
+.final::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;border:50px solid rgba(255,90,74,.1)}
 .final p{color:#b9c4d8}
 .final .actions{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
 .final .btn-ligne{color:#fff}
@@ -184,7 +184,7 @@ footer .grille{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;pad
 footer h4{font:700 .9rem Montserrat,sans-serif;color:var(--texte);margin:0 0 12px}
 footer ul{list-style:none;padding:0;margin:0;display:grid;gap:7px}
 footer a{text-decoration:none}
-footer a:hover{color:var(--vert)}
+footer a:hover{color:var(--accent)}
 footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px;font-size:.84rem;flex-wrap:wrap}
 
 /* Bouton d'appel mobile */
@@ -244,7 +244,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
       <a href="#installation">Installation</a>
       <a href="#faq">Questions</a>
     </nav>
-    <a class="btn btn-vert" href="#devis">Devis gratuit</a>
+    <a class="btn btn-accent" href="#devis">Devis gratuit</a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -256,13 +256,13 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
       <h1>Votre maison vous prévient, <em>où que vous soyez.</em></h1>
       <p class="chapo">Alarmes et caméras Ajax sans fil, installées chez vous en une journée. Au moindre mouvement suspect, vous recevez l'alerte et une photo sur votre téléphone.</p>
       <ul class="coches">
-        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#24c474"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans fil : aucun travaux, aucune saignée dans vos murs</li>
-        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#24c474"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Photos de l'intrusion envoyées en quelques secondes</li>
-        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#24c474"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Détecteurs qui ignorent votre chien ou votre chat</li>
-        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#24c474"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Un interlocuteur local, basé à Estinnes</li>
+        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#ff5a4a"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans fil : aucun travaux, aucune saignée dans vos murs</li>
+        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#ff5a4a"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Photos de l'intrusion envoyées en quelques secondes</li>
+        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#ff5a4a"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Détecteurs qui ignorent votre chien ou votre chat</li>
+        <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#ff5a4a"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Un interlocuteur local, basé à Estinnes</li>
       </ul>
       <div class="actions">
-        <a class="btn btn-vert" href="#devis">Recevoir mon devis gratuit</a>
+        <a class="btn btn-accent" href="#devis">Recevoir mon devis gratuit</a>
         <a class="btn btn-ligne" href="tel:+32499469864">Appeler le 0499 46 98 64</a>
       </div>
     </div>
@@ -290,7 +290,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
             <option>Je ne sais pas encore</option>
           </select>
         </div>
-        <button class="btn btn-vert" type="submit">Recevoir mon devis gratuit</button>
+        <button class="btn btn-accent" type="submit">Recevoir mon devis gratuit</button>
         <p class="mention">Sans engagement. Vos coordonnées servent uniquement à vous recontacter.</p>
       </form>
       <div class="merci" id="merci">
@@ -393,7 +393,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
         <div class="puce"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><h3>Vie privée respectée</h3><p>Le détecteur ne filme pas en continu : il ne prend des photos qu'en cas d'alarme.</p></div></div>
         <div class="puce"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 13h6l-1 8 8-10h-6l1-8Z"/></svg><div><h3>Des années d'autonomie</h3><p>Fonctionne sur piles, sans câble à tirer.</p></div></div>
       </div>
-      <a class="btn btn-vert" href="#devis">Je veux être prévenu</a>
+      <a class="btn btn-accent" href="#devis">Je veux être prévenu</a>
     </div>
   </div>
 </section>
@@ -404,7 +404,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
       <span class="surtitre">Et le chien ?</span>
       <h2>Votre chien ne déclenche pas l'alarme. Un cambrioleur, si.</h2>
       <p class="intro">Les détecteurs Ajax font la différence entre un animal et une personne. Votre compagnon garde la maison en toute liberté, sans fausse alerte au milieu de la nuit.</p>
-      <a class="btn btn-vert" href="#devis">Demander un devis gratuit</a>
+      <a class="btn btn-accent" href="#devis">Demander un devis gratuit</a>
     </div>
     <div class="photos apparait">
       <figure class="ok"><img src="img/chien.jpg" alt="Chien dans l'entrée d'une maison" loading="lazy"><figcaption><b>Animal détecté</b>Pas d'alerte, rien à faire</figcaption></figure>
@@ -479,14 +479,14 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
     </div>
     <div class="carte-zone apparait" aria-hidden="true">
       <svg viewBox="0 0 500 400">
-        <defs><radialGradient id="zg"><stop offset="0" stop-color="#24c474" stop-opacity=".35"/><stop offset="1" stop-color="#24c474" stop-opacity="0"/></radialGradient></defs>
+        <defs><radialGradient id="zg"><stop offset="0" stop-color="#ff5a4a" stop-opacity=".35"/><stop offset="1" stop-color="#ff5a4a" stop-opacity="0"/></radialGradient></defs>
         <g stroke="#22324f" stroke-width="1">
           <path d="M0 80h500M0 160h500M0 240h500M0 320h500M100 0v400M200 0v400M300 0v400M400 0v400"/>
         </g>
         <circle cx="250" cy="215" r="170" fill="url(#zg)"/>
-        <circle cx="250" cy="215" r="170" fill="none" stroke="#24c474" stroke-opacity=".5" stroke-dasharray="4 6"/>
+        <circle cx="250" cy="215" r="170" fill="none" stroke="#ff5a4a" stroke-opacity=".5" stroke-dasharray="4 6"/>
         <g font-family="Inter,sans-serif" font-size="13" fill="#b9c4d8">
-          <circle cx="250" cy="215" r="7" fill="#24c474"/><text x="262" y="220" fill="#fff" font-weight="600">Estinnes</text>
+          <circle cx="250" cy="215" r="7" fill="#ff5a4a"/><text x="262" y="220" fill="#fff" font-weight="600">Estinnes</text>
           <circle cx="285" cy="175" r="4" fill="#fff"/><text x="294" y="179">Binche</text>
           <circle cx="285" cy="120" r="4" fill="#fff"/><text x="294" y="124">La Louvière</text>
           <circle cx="160" cy="150" r="4" fill="#fff"/><text x="150" y="154" text-anchor="end">Mons</text>
@@ -523,7 +523,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
         <p>Une visite gratuite, un devis clair, une installation en une journée. Parlons de votre maison ou de votre commerce.</p>
       </div>
       <div class="actions">
-        <a class="btn btn-vert" href="#devis">Recevoir mon devis gratuit</a>
+        <a class="btn btn-accent" href="#devis">Recevoir mon devis gratuit</a>
         <a class="btn btn-ligne" href="tel:+32499469864">0499 46 98 64</a>
       </div>
     </div>
@@ -554,7 +554,7 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
 
 <div class="appel-mobile">
   <a class="btn tel" href="tel:+32499469864">Appeler</a>
-  <a class="btn btn-vert" href="#devis">Devis gratuit</a>
+  <a class="btn btn-accent" href="#devis">Devis gratuit</a>
 </div>
 
 <script>
