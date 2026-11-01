@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr-BE">
+<html lang="fr-BE" class="sc-statique">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Manrope:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=IBM+Plex+Mono:wght@500&family=Montserrat:wght@500;600;700;800&family=Manrope:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"EasySecurity","url":"https://easysecurity.zanksolutions.be/","telephone":"+32499469864","email":"info@zanksolutions.be","address":{"@type":"PostalAddress","streetAddress":"Chemin Lambiert","postalCode":"7120","addressLocality":"Estinnes","addressCountry":"BE"},"areaServed":["Estinnes","Binche","La Louvière","Mons","Thuin","Charleroi","Morlanwelz","Anderlues"],"description":"Installation d'alarmes et de caméras Ajax sans fil dans le Hainaut."}
 </script>
@@ -91,6 +91,62 @@ header.nav .conteneur{display:flex;align-items:center;gap:28px;height:72px}
 .mention{font-size:.78rem;color:var(--doux);margin:12px 0 0;text-align:center}
 .merci{display:none;text-align:center;padding:24px 0}
 .merci svg{width:56px;height:56px;margin:0 auto 12px}
+
+/* Scène d'ouverture : une intrusion racontée au défilement */
+.sc{height:600vh;position:relative;background:#060a14;color:#f0f3f8}
+.sc-ecran{position:sticky;top:72px;height:calc(100vh - 72px);height:calc(100svh - 72px);overflow:hidden;background:#060a14}
+.sc-cadre{position:absolute;inset:0;overflow:hidden}
+.sc-plan{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:opacity,transform}
+#sc-rue{object-position:50% 90%}
+#sc-salon{object-position:50% 62%}
+#sc-chien{object-position:50% 42%}
+#sc-telephone{object-position:50% 32%}
+#sc-photo{object-position:64% 50%}
+#sc-rue-fin{object-position:50% 92%}
+.sc-voile{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,10,20,.78) 0%,rgba(6,10,20,.3) 40%,rgba(6,10,20,0) 62%,rgba(6,10,20,.4) 100%)}
+.sc-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.sc-sirene{position:absolute;inset:0;background:var(--rouge);opacity:0;pointer-events:none;mix-blend-mode:screen}
+.sc-alarme .sc-sirene{animation:sc-gyro .9s ease-in-out infinite alternate}
+@keyframes sc-gyro{0%{opacity:.18}100%{opacity:.03}}
+.sc-chapitre{position:absolute;left:clamp(16px,5vw,72px);right:clamp(16px,5vw,72px);top:clamp(24px,7vh,80px);opacity:0;pointer-events:none}
+.sc-chapitre .sc-titre{margin:0;font:600 clamp(2.8rem,8.4vw,7.4rem)/.98 "Barlow Condensed",Montserrat,sans-serif;letter-spacing:-.01em;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+.sc-chapitre .sc-titre em{font-style:normal;color:#ff6a58}
+.sc-chapitre p{margin:16px 0 0;max-width:25em;font-size:clamp(1rem,1.5vw,1.2rem);color:#e2e6ee;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.sc-chapitre .btn{margin-top:22px;pointer-events:auto}
+.sc-indice{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#d5dbe7;white-space:nowrap}
+.sc-etiquette{position:absolute;right:24px;bottom:28px;font:500 .84rem "IBM Plex Mono",monospace;display:flex;align-items:center;gap:10px;padding:9px 13px;background:rgba(6,10,20,.78);border:1px solid rgba(255,255,255,.16);border-radius:4px;opacity:0;white-space:nowrap}
+.sc-etiquette i{width:9px;height:9px;border-radius:50%;background:#3ddc97}
+.sc-etiquette.sc-rouge i{background:#ff6a58}
+.sc-viseur{--c:#ff6a58;position:absolute;left:50%;top:60%;width:min(62vmin,430px);aspect-ratio:1;transform:translate(-50%,-50%);opacity:0;pointer-events:none;background:linear-gradient(var(--c),var(--c)) 0 0/34px 2px,linear-gradient(var(--c),var(--c)) 0 0/2px 34px,linear-gradient(var(--c),var(--c)) 100% 0/34px 2px,linear-gradient(var(--c),var(--c)) 100% 0/2px 34px,linear-gradient(var(--c),var(--c)) 0 100%/34px 2px,linear-gradient(var(--c),var(--c)) 0 100%/2px 34px,linear-gradient(var(--c),var(--c)) 100% 100%/34px 2px,linear-gradient(var(--c),var(--c)) 100% 100%/2px 34px;background-repeat:no-repeat}
+.sc-tel{position:absolute;left:50%;bottom:-120px;margin-left:calc(min(330px,76vw) / -2);width:min(330px,76vw);aspect-ratio:9/15.5;background:#04070e;border:7px solid #1c2536;border-bottom:0;border-radius:38px 38px 0 0;padding:44px 12px 0;box-shadow:0 30px 70px rgba(0,0,0,.7);transform:translateY(110%)}
+.sc-tel-heure{text-align:center;font:600 3.5rem/1 "Barlow Condensed",sans-serif;margin-bottom:22px}
+.sc-notif{background:rgba(240,243,250,.96);color:#111827;border-radius:16px;padding:12px;font-size:.84rem;line-height:1.3;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.sc-notif b{display:block;color:#c42b1c;font-weight:600}
+.sc-notif img{width:100%;height:124px;object-fit:cover;object-position:60% 50%;border-radius:9px;margin-top:9px}
+.titre-prix{font:600 clamp(2.8rem,6vw,5.2rem)/.98 "Barlow Condensed",Montserrat,sans-serif;letter-spacing:-.01em;margin:0 0 .4em}
+.titre-prix em{font-style:normal;color:var(--accent-clair)}
+@media (min-aspect-ratio:1/1){
+  .sc-cadre{left:52%}
+  .sc-voile{background:linear-gradient(90deg,#060a14 0%,rgba(6,10,20,0) 22%),linear-gradient(180deg,rgba(6,10,20,.4) 0%,rgba(6,10,20,0) 22%,rgba(6,10,20,0) 72%,rgba(6,10,20,.5) 100%)}
+  .sc-chapitre{right:50%;top:26vh}
+  .sc-chapitre .sc-titre{font-size:clamp(2.8rem,5.7vw,6.4rem)}
+  .sc-tel{bottom:-20px;width:min(300px,70%);margin-left:calc(min(300px,70%) / -2)}
+  .sc-indice{left:clamp(16px,5vw,72px);transform:none}
+  #sc-chien{object-position:50% 50%}
+}
+@media (max-width:620px){
+  .sc-etiquette{left:16px;right:16px;bottom:88px;justify-content:center;font-size:.78rem}
+  .sc-indice{bottom:88px}
+  .sc-tel{bottom:-60px}
+}
+/* Sans JavaScript ou sans animation : une image, puis les textes les uns après les autres */
+.sc-statique .sc{height:auto}
+.sc-statique .sc-ecran{position:relative;top:auto;height:auto;display:flex;flex-direction:column;padding-bottom:40px}
+.sc-statique .sc-cadre{position:relative;inset:auto;height:60vh;flex:none}
+.sc-statique #sc-rue{opacity:1}
+.sc-statique .sc-chapitre{position:static;opacity:1;margin:24px 16px 0}
+.sc-statique .sc-chapitre .sc-titre{font-size:clamp(2.4rem,6vw,4rem)}
+.sc-statique .sc-plan:not(#sc-rue),.sc-statique .sc-voile,.sc-statique .sc-flash,.sc-statique .sc-sirene,.sc-statique .sc-indice,.sc-statique .sc-tel,.sc-statique .sc-etiquette,.sc-statique .sc-viseur{display:none}
 
 /* Questionnaire d'estimation */
 .carte-devis{scroll-margin-top:88px}
@@ -256,20 +312,8 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
 .pas.apparait:not(.vu) .rond{transform:scale(.3)}
 .deroule::before{transform-origin:left;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
 .deroule.attente:not(.vu)::before{transform:scaleX(0)}
-@keyframes monte{from{opacity:0;transform:translateY(22px)}}
-@keyframes recule{from{transform:scale(1.06)}}
-.hero::before{animation:recule 1.8s cubic-bezier(.22,1,.36,1) backwards}
-.hero h1,.hero .chapo,.hero .coches li,.hero .actions,.hero .carte-devis{animation:monte .7s cubic-bezier(.22,1,.36,1) backwards}
-.hero .chapo{animation-delay:.1s}
-.hero .coches li:nth-child(1){animation-delay:.18s}
-.hero .coches li:nth-child(2){animation-delay:.25s}
-.hero .coches li:nth-child(3){animation-delay:.32s}
-.hero .coches li:nth-child(4){animation-delay:.39s}
-.hero .actions{animation-delay:.48s}
-.hero .carte-devis{animation-delay:.2s}
 @media (min-width:981px){.apparait{transition-delay:calc(var(--rang,0)*90ms)}}
 @media (prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
-  .hero::before,.hero h1,.hero .chapo,.hero .coches li,.hero .actions,.hero .carte-devis{animation:none}
   .solution.apparait:not(.vu) img,.pas.apparait:not(.vu) .rond,.deroule.attente:not(.vu)::before{transform:none}
   .solution img,.pas .rond,.deroule::before{transition:none}
 }
@@ -323,16 +367,55 @@ footer .bas{display:flex;justify-content:space-between;gap:16px;padding-top:22px
       <a href="#installation">Installation</a>
       <a href="#faq">Questions</a>
     </nav>
-    <a class="btn btn-accent" href="#devis">Devis gratuit</a>
+    <a class="btn btn-accent" href="#devis">Calculer mon prix</a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
+<section class="sc" id="sc" aria-label="Une intrusion, étape par étape">
+  <div class="sc-ecran" id="sc-ecran">
+    <div class="sc-cadre" id="sc-cadre">
+      <img class="sc-plan" id="sc-rue" src="img/nuit/rue.webp" alt="Un quartier de maisons en briques à la nuit tombée" fetchpriority="high">
+      <img class="sc-plan" id="sc-salon" src="img/nuit/salon.webp" alt="">
+      <img class="sc-plan" id="sc-chien" src="img/nuit/chien.webp" alt="">
+      <canvas class="sc-plan" id="sc-main"></canvas>
+      <img class="sc-plan" id="sc-photo" src="img/nuit/photo.webp" alt="">
+      <img class="sc-plan" id="sc-telephone" src="img/nuit/telephone.webp" alt="">
+      <img class="sc-plan" id="sc-rue-fin" src="img/nuit/rue-fin.webp" alt="">
+      <div class="sc-voile"></div>
+      <div class="sc-viseur" id="sc-viseur"></div>
+      <div class="sc-flash" id="sc-flash"></div>
+      <div class="sc-sirene"></div>
+      <div class="sc-etiquette" id="sc-eti-chien" aria-hidden="true"><i></i>19:30 · Animal reconnu · pas d'alerte</div>
+      <div class="sc-etiquette sc-rouge" id="sc-eti-porte" aria-hidden="true"><i></i>22:47 · Entrée · <span id="sc-compteur">mouvement détecté</span></div>
+      <div class="sc-tel" id="sc-tel" aria-hidden="true">
+        <div class="sc-tel-heure">22:47</div>
+        <div class="sc-notif"><b>Intrusion détectée</b>Entrée · 3 photos reçues<img src="img/nuit/photo.webp" alt=""></div>
+      </div>
+    </div>
+    <div class="sc-chapitre" data-de="0" data-a=".15">
+      <h1 class="sc-titre">22 h 47.<br>Votre rue dort.</h1>
+      <p>Alarmes et caméras Ajax sans fil, posées en une journée dans le Hainaut.</p>
+      <a class="btn btn-accent" href="#devis">Calculer mon prix</a>
+    </div>
+    <div class="sc-chapitre" data-de=".17" data-a=".3"><div class="sc-titre">Vous n'êtes pas là.<br>Votre maison veille.</div></div>
+    <div class="sc-chapitre" data-de=".32" data-a=".44"><div class="sc-titre">Votre chien passe.<br>Rien ne sonne.</div></div>
+    <div class="sc-chapitre" data-de=".46" data-a=".58"><div class="sc-titre">Cette silhouette-là,<br><em>le détecteur la voit.</em></div></div>
+    <div class="sc-chapitre" data-de=".6" data-a=".68"><div class="sc-titre">3 photos.<br>En quelques secondes.</div></div>
+    <div class="sc-chapitre" data-de=".7" data-a=".84">
+      <div class="sc-titre">Vous le savez<br><em>à 22 h 47.</em></div>
+      <p>La photo arrive sur votre téléphone, la sirène retentit.</p>
+    </div>
+    <div class="sc-chapitre" data-de=".87" data-a="1.2"><div class="sc-titre">La rue se rendort.<br>Vous aussi.</div></div>
+    <div class="sc-indice" id="sc-indice" aria-hidden="true">Faites défiler</div>
+  </div>
+</section>
+
 <section class="hero">
   <div class="conteneur">
     <div>
-      <h1>Votre maison vous prévient, <em>où que vous soyez.</em></h1>
+      <h2 class="titre-prix">Et le prix, vous l'avez <em>avant de nous appeler.</em></h2>
       <p class="chapo">Alarmes et caméras Ajax sans fil, installées chez vous en une journée. Au moindre mouvement suspect, vous recevez l'alerte et une photo sur votre téléphone.</p>
       <ul class="coches">
         <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="11" fill="#ff5a4a"/><path d="m6.5 11.2 3 3 6-6.2" fill="none" stroke="#0d1628" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sans fil : aucun travaux, aucune saignée dans vos murs</li>
@@ -888,6 +971,79 @@ form.addEventListener('submit',async e=>{
     if(mo)mo.animate('#merci svg',{scale:[.4,1],opacity:[0,1]},RESSORT);
   }catch{btn.disabled=false;btn.textContent='Réessayer';alert("L'envoi n'a pas fonctionné. Appelez-nous au 0499 46 98 64.")}
 });
+</script>
+<script>
+/* Scène d'ouverture : le défilement pilote les plans, sans bibliothèque. */
+(()=>{
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  document.documentElement.classList.remove('sc-statique');
+  const $=id=>document.getElementById('sc-'+id);
+  const bloc=document.getElementById('sc'),ecran=$('ecran'),cadre=$('cadre'),toile=$('main'),flash=$('flash'),tel=$('tel'),indice=$('indice'),viseur=$('viseur'),
+    etiChien=$('eti-chien'),etiPorte=$('eti-porte'),compteur=$('compteur'),chapitres=[...bloc.querySelectorAll('.sc-chapitre')];
+  const seg=(p,a,b)=>Math.min(1,Math.max(0,(p-a)/(b-a)));
+  const doux=x=>x*x*(3-2*x);
+  const bosse=(p,c,l)=>Math.max(0,1-Math.abs(p-c)/l);
+  // [élément, entrée, sortie, zoom de départ, zoom d'arrivée]
+  const plans=[[$('rue'),-1,.17,1,1.14],[$('salon'),.15,.32,1.1,1],[$('chien'),.3,.46,1,1.1],[toile,.44,.6,1.02,1.1],[$('photo'),.585,.7,1.1,1.02],[$('telephone'),.68,.87,1.08,1],[$('rue-fin'),.85,2,1.12,1]];
+
+  // Les images de la main se chargent après la page, puis sont dessinées selon le défilement.
+  const N=22,images=[],ctx=toile.getContext('2d');
+  let dernier=0;
+  addEventListener('load',()=>{
+    for(let i=0;i<N;i++){const im=new Image();im.decoding='async';im.onload=()=>{if(dernier===i)dessinerMain(i)};im.src=`img/nuit/main-${String(i).padStart(2,'0')}.webp`;images[i]=im}
+  });
+  function dimensionner(){
+    const r=Math.min(devicePixelRatio||1,1.5);
+    toile.width=cadre.clientWidth*r;toile.height=cadre.clientHeight*r;
+    dessinerMain(dernier);
+  }
+  function dessinerMain(i){
+    dernier=i;
+    let im=images[i];
+    if(!im||!im.complete||!im.naturalWidth)im=images.slice(0,i).reverse().find(x=>x&&x.complete&&x.naturalWidth);
+    if(!im)return;
+    const W=toile.width,H=toile.height,k=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*k,h=im.naturalHeight*k;
+    // La silhouette est à droite du plan : on recadre sur elle.
+    ctx.drawImage(im,Math.min(0,Math.max(W-w,W/2-w*.655)),(H-h)/2,w,h);
+  }
+  function dessiner(p){
+    for(const [el,a,b,z0,z1] of plans){
+      const o=seg(p,a,a+.025)*(1-seg(p,b,b+.025));
+      el.style.opacity=o.toFixed(3);
+      if(o>0)el.style.transform=`scale(${(z0+(z1-z0)*seg(p,a,b+.025)).toFixed(4)})`;
+    }
+    const i=Math.round(doux(seg(p,.47,.585))*(N-1));
+    if(i!==dernier)dessinerMain(i);
+    flash.style.opacity=(Math.max(...[.61,.635,.66].map(c=>bosse(p,c,.007)))*.5).toFixed(3);
+    viseur.style.opacity=(seg(p,.56,.585)*(1-seg(p,.675,.695))).toFixed(3);
+    etiChien.style.opacity=(seg(p,.35,.37)*(1-seg(p,.43,.45))).toFixed(3);
+    etiPorte.style.opacity=(seg(p,.56,.58)*(1-seg(p,.68,.7))).toFixed(3);
+    const n=(p>=.61)+(p>=.635)+(p>=.66);
+    compteur.textContent=n?`photo ${n} sur 3`:'mouvement détecté';
+    ecran.classList.toggle('sc-alarme',p>.72&&p<.84);
+    tel.style.transform=`translateY(${(110-110*doux(seg(p,.7,.77))+110*doux(seg(p,.83,.87))).toFixed(1)}%)`;
+    indice.style.opacity=1-seg(p,0,.05);
+    for(const c of chapitres){
+      const de=+c.dataset.de,a=+c.dataset.a,o=(de===0?1:seg(p,de,de+.02))*(1-seg(p,a-.02,a));
+      c.style.opacity=o.toFixed(3);
+      c.style.transform=`translateY(${((1-o)*18).toFixed(1)}px)`;
+      c.style.visibility=o>0?'visible':'hidden';
+    }
+  }
+  const lire=()=>Math.min(1,Math.max(0,(72-bloc.getBoundingClientRect().top)/(bloc.offsetHeight-ecran.offsetHeight)));
+  let cible=lire(),actuel=cible,enCours=false;
+  function boucle(){
+    actuel+=(cible-actuel)*.14;
+    if(Math.abs(cible-actuel)<.0004){actuel=cible;enCours=false}
+    dessiner(actuel);
+    if(enCours)requestAnimationFrame(boucle);
+  }
+  function relancer(){cible=lire();if(!enCours){enCours=true;requestAnimationFrame(boucle)}}
+  addEventListener('scroll',relancer,{passive:true});
+  addEventListener('resize',()=>{dimensionner();relancer()});
+  dimensionner();
+  dessiner(actuel);
+})();
 </script>
 </body>
 </html>
